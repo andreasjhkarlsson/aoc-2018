@@ -39,6 +39,8 @@ type Console with
 module Seq =
     let repeat items = seq { while true do yield! items }
 
+    let count items = items |> Seq.countBy (fun e -> e)
+
 let parseLines (str: string) =
     str.Split([|'\r'; '\n'|])
    |> Array.choose (fun row ->
