@@ -57,3 +57,11 @@ let (|Regex|_|) pattern input =
         let m = Regex.Match(input, pattern)
         if m.Success then Some(List.tail [ for g in m.Groups -> g.Value ])
         else None
+
+let (=>) a b = a, b
+
+// Cartesian product operator
+let (|*|) l1 l2 =
+    l1
+    |> Seq.map (fun e1 -> l2 |> List.map ((=>) e1))
+    |> Seq.concat
