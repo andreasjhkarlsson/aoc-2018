@@ -41,6 +41,10 @@ module Seq =
     let repeat items = seq { while true do yield! items }
 
     let count items = items |> Seq.countBy (fun e -> e)
+ 
+module String =
+    let trim (str: string) = str.Trim ()
+
 
 let parseLines (str: string) =
     str.Split([|'\r'; '\n'|])
