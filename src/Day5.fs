@@ -10,20 +10,12 @@ let solve input =
 
     let reacts a b = (abs ((int a) - (int b))) = 32 // 32 = distance between uppercase/lowercase in ASCII
 
-    let reduceOnce units =
+    let reduce polymer =
         List.foldBack (fun u polymer -> 
             match polymer with
             | head::rest when reacts head u ->  rest
             | _ -> u::polymer
-        ) units []
-
-    let rec reduce units =
-        let once = reduceOnce units
-        let twice = reduceOnce once
-        if once = twice then once
-        else reduce twice
-    
-    let reduced = reduce polymer
+        ) polymer []
         
     {
         Part1 =
