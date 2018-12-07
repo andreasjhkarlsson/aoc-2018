@@ -45,6 +45,7 @@ module Seq =
 module String =
     let trim (str: string) = str.Trim ()
 
+    let split (separator: string) (str: string) = (str.Split([|separator|], StringSplitOptions.None)) |> Array.toList
 
 let parseLines (str: string) =
     str.Split([|'\r'; '\n'|])
