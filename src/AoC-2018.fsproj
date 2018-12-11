@@ -61,6 +61,7 @@
     <Compile Include="Day7.fs" />
     <Compile Include="Day8.fs" />
     <Compile Include="Day9.fs" />
+    <Compile Include="Day10.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +71,7 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
